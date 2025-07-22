@@ -1,0 +1,39 @@
+{
+  "name": "bitcoin-testnet-project",
+  "version": "1.0.0",
+  "description": "A Bitcoin testnet transaction creator built with Node.js and TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "bitcoin",
+    "testnet",
+    "blockchain",
+    "cryptocurrency",
+    "transaction"
+  ],
+  "author": "Bitcoin Developer",
+  "license": "MIT",
+  "dependencies": {
+    "bitcoinjs-lib": "^6.1.5",
+    "ecpair": "^2.1.0",
+    "tiny-secp256k1": "^2.2.3",
+    "bip32": "^4.0.0",
+    "bip39": "^3.1.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
