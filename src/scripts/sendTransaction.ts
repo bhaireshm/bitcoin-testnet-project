@@ -25,11 +25,11 @@ async function main() {
     // Load wallet data
     const walletData = JSON.parse(fs.readFileSync(CONFIG.walletPath, 'utf-8'));
 
-    console.log('🚀 Starting Bitcoin Testnet Transaction');
+    console.log('Starting Bitcoin Testnet Transaction');
     console.log('=====================================\n');
 
     // Check balance
-    console.log('💰 Checking wallet balance...');
+    console.log('Checking wallet balance...');
     const balance = await getWalletBalance(walletData.address);
     console.log(`Current balance: ${balance} BTC\n`);
 
@@ -39,15 +39,15 @@ async function main() {
 
     // Get UTXOs(Unspent transaction output)
     const utxos = await getUTXOs(walletData.address);
-    console.log(`📦 Found ${utxos.length} unspent outputs\n`);
+    console.log(`Found ${utxos.length} unspent outputs\n`);
 
     if (utxos.length === 0) {
       throw new Error('No UTXOs available for spending');
     }
 
     // Create transaction
-    console.log('💸 Creating transaction...');
-    console.log(`📤 Sending ${CONFIG.amountToSend} BTC to ${CONFIG.recipientAddress}`);
+    console.log('Creating transaction...');
+    console.log(`Sending ${CONFIG.amountToSend} BTC to ${CONFIG.recipientAddress}`);
 
     const txResult = await createTransaction({
       privateKey: walletData.privateKey,
@@ -58,16 +58,16 @@ async function main() {
     });
 
     if (txResult.success) {
-      console.log('\n✅ Transaction created and broadcasted successfully!');
-      console.log(`🔍 Transaction ID: ${txResult.txId}`);
-      console.log(`🌐 View on explorer: ${TESTNET_CONFIG.explorerUrl}/tx/${txResult.txId}`);
-      console.log(`💰 Fee paid: ${txResult.fee} satoshis`);
+      console.log('\nTransaction created and broadcasted successfully!');
+      console.log(`Transaction ID: ${txResult.txId}`);
+      console.log(`View on explorer: ${TESTNET_CONFIG.explorerUrl}/tx/${txResult.txId}`);
+      console.log(`Fee paid: ${txResult.fee} satoshis`);
     } else {
-      console.log('\n❌ Transaction failed:', txResult.error);
+      console.log('\nTransaction failed:', txResult.error);
     }
 
   } catch (error) {
-    console.error('❌ Error:', error instanceof Error ? error.message : error);
+    console.error('Error:', error instanceof Error ? error.message : error);
   }
 }
 
