@@ -81,6 +81,7 @@ export async function getWalletBalance(address: string): Promise<number> {
 
 export async function getUTXOs(address: string): Promise<UTXO[]> {
   try {
+    // Unspent transaction output
     const response = await axios.get(`${TESTNET_CONFIG.apiUrl}/address/${address}/utxo`);
     return response.data.map((utxo: any) => ({
       txid: utxo.txid,

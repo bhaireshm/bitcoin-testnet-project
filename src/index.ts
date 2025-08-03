@@ -6,9 +6,6 @@ import { createWallet, getUTXOs, getWalletBalance } from './wallet/wallet';
 // tb1qqmp9euydw2d2pa42w368x64u58qdywlk9rdvld
 // https://blockstream.info/testnet/address/tb1qqmp9euydw2d2pa42w368x64u58qdywlk9rdvld
 
-// tb1qxruq29kj0qrfc7rdt0p29txkqv5exfqnzrclu0
-// tb1qvc9s4yjsttk3l38ary2y0mndjv028xt8jg89nc
-
 async function main() {
   console.log('🚀 Starting Bitcoin Testnet Transaction Creator');
   console.log('===============================================\n');
